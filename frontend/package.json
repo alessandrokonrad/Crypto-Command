@@ -1,0 +1,43 @@
+{
+  "name": "crypto-command",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.5.0",
+    "@material-ui/icons": "^4.4.3",
+    "@south-paw/react-vector-maps": "^3.0.0",
+    "firebase": "^7.5.0",
+    "flag-icon-css": "^3.4.5",
+    "react": "^16.10.2",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.10.2",
+    "react-emit": "^2.1.0",
+    "react-lazyload": "^2.6.5",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1",
+    "url-loader": "^2.2.0",
+    "web3": "^1.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

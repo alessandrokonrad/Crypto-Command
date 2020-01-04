@@ -1,0 +1,12 @@
+@keyframes fading {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  animation: fading 2s infinite alternate;
+}
