@@ -65,7 +65,7 @@ const TermsOfService = () => {
           using the “Metamask” browser extension. The website and it’s creators
           do not except or hold any payments from players. Any ether transfers
           done over the website are transferred directly to blockchain contract
-          address: 0xFBb2fd81f7C84fDFe7deB68c26a53833a9C4fD1c. Any Ether or fiat
+          address: 0x862174623BC39E57DE552538f424806B947d3D05. Any Ether or fiat
           currency deposited into your metamask extension is fully owned and
           controlled by the player. The game does not have access to the funds
           deposited in your metamask browser extension. Transfers of Ether, are
