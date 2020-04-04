@@ -142,7 +142,7 @@ const CommandList = props => {
                 let occupationCount = country.occupations.length;
                 return (
                   <Box
-                  onClick={() => history.push(`country/${country.code}`)}
+                    onClick={() => history.push(`country/${country.code}`)}
                     className={classes.listEl}
                     marginBottom={2}
                     key={country.code}

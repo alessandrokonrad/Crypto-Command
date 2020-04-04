@@ -51,6 +51,7 @@ const isoCountries = {
   CG: "Congo",
   CD: "Congo, Democratic Republic",
   CK: "Cook Islands",
+  CS: "Coronavirus",
   CR: "Costa Rica",
   CI: "Cote D'Ivoire",
   HR: "Croatia",
